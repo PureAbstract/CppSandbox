@@ -18,9 +18,9 @@ int main(int argc, char* argv[])
   if (argc == 3) minLength = atoi(argv[2]);
 
   string letters = argv[1];
-  sort(letters.begin(), letters.end());
   transform(letters.begin(), letters.end(), letters.begin(), [](char c)
             { return tolower(c); });
+  sort(letters.begin(), letters.end());
 
   std::vector<string> results;
 
@@ -35,9 +35,9 @@ int main(int argc, char* argv[])
     if (_s.size() < minLength) return;
 
     auto s(_s);
-    sort(s.begin(), s.end());
     transform(s.begin(), s.end(), s.begin(), [](char c)
               { return tolower(c); });
+    sort(s.begin(), s.end());
 
     auto letter_it = letters.begin();
 
